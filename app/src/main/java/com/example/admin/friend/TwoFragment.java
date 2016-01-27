@@ -11,10 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import static android.provider.ContactsContract.CommonDataKinds.Phone;
 
@@ -44,7 +42,7 @@ public class TwoFragment extends android.support.v4.app.Fragment implements View
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_two, container, false);
 
-        s1 = (Switch) view.findViewById(R.id.switch1);
+/*        s1 = (Switch) view.findViewById(R.id.switch1);
         s2 = (Switch) view.findViewById(R.id.switch2);
         s3 = (Switch) view.findViewById(R.id.switch3);
 
@@ -100,7 +98,7 @@ public class TwoFragment extends android.support.v4.app.Fragment implements View
         b3.setOnClickListener(this);
         b4.setOnClickListener(this);
 
-
+*/
         return view;
 
 

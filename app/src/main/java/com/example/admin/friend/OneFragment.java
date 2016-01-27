@@ -1,30 +1,19 @@
 package com.example.admin.friend;
 
 import android.content.ContentResolver;
-import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-
 public class OneFragment extends android.support.v4.app.Fragment {
     private static final int RESULT_OK = 1;
     View view;
 
-
+RoundImage roundImage;
     Bitmap bmp;
     ImageView iv;
 
@@ -37,7 +26,7 @@ public class OneFragment extends android.support.v4.app.Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+//retrieve();
 
     }
 
@@ -45,11 +34,14 @@ public class OneFragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_one, container, false);
-        iv=(ImageView)view.findViewById(R.id.imageView);
+                iv = (ImageView) view.findViewById(R.id.imageView);
+        Bitmap bm= BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher);
+        roundImage=new RoundImage(bm);
+        iv.setImageDrawable(roundImage);
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openGallery();
+                //openGallery();
             }
         });
 
@@ -60,7 +52,8 @@ public class OneFragment extends android.support.v4.app.Fragment {
         return view;
     }
 
-    private void openGallery() {
+
+    /*private void openGallery() {
             Intent photoPickerIntent = new Intent(Intent.ACTION_GET_CONTENT);
             photoPickerIntent.setType("image/*");
             startActivityForResult(photoPickerIntent, 1);
@@ -124,7 +117,7 @@ public class OneFragment extends android.support.v4.app.Fragment {
 
     public ContentResolver getContentResolver() {
         return contentResolver;
-    }
+    }*/
 }
 
 
